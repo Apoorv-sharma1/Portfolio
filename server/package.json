@@ -1,0 +1,25 @@
+{
+  "name": "apoorv-portfolio-server",
+  "version": "1.0.0",
+  "description": "Express and MongoDB backend for Apoorv Sharma Portfolio",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "seed-resume": "node scripts/generateResumes.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "docx": "^8.5.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.3.1",
+    "helmet": "^7.1.0",
+    "mongoose": "^8.5.1",
+    "pdfkit": "^0.15.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

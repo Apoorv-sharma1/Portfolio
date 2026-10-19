@@ -1,0 +1,60 @@
+.hold-button-container {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  -webkit-user-select: none;
+  outline: none;
+}
+
+.hold-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  font-weight: 600;
+  text-align: center;
+}
+
+.hold-button:active {
+  outline: none;
+}
+
+.hold-button__fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  transition: width cubic-bezier(0.1, 0.7, 0.1, 1);
+}
+
+.hold-button__fill--wave::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: -20%;
+  width: 16px;
+  height: 140%;
+  background: inherit;
+  border-radius: 50%;
+  filter: blur(2px);
+  opacity: 0.8;
+}
+
+.hold-button__content {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.hold-button--glow {
+  box-shadow: 0 0 20px rgba(120, 245, 43, 0.3);
+}
