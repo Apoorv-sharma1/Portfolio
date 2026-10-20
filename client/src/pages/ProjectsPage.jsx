@@ -92,10 +92,10 @@ export const ProjectsPage = () => {
                 padding: '0.3rem 0.9rem',
                 borderRadius: '999px',
                 background: 'rgba(19,23,32,0.9)',
-                border: '1px solid rgba(120,245,43,0.4)',
+                border: '1px solid rgba(56,189,248,0.4)',
                 fontSize: '0.7rem',
                 fontFamily: 'monospace',
-                color: '#78F52B',
+                color: '#38BDF8',
                 marginBottom: '1rem',
               }}
             >
@@ -170,7 +170,7 @@ export const ProjectsPage = () => {
               <Terminal size={11} style={{ color: '#69C9FF' }} />
               Interactive ASCII Horizon - move your cursor across the wave
             </span>
-            <span style={{ color: '#78F52B' }}>{filtered.length} project{filtered.length !== 1 ? 's' : ''} shown</span>
+            <span style={{ color: '#38BDF8' }}>{filtered.length} project{filtered.length !== 1 ? 's' : ''} shown</span>
           </div>
         </div>
       </div>
@@ -223,12 +223,12 @@ const FilterButton = ({ cat, active, onClick }) => {
         outline: 'none',
         ...(active
           ? {
-              background: '#78F52B',
-              color: '#000',
-              borderColor: '#78F52B',
+              background: '#38BDF8',
+              color: '#0F172A',
+              borderColor: '#38BDF8',
               fontWeight: 800,
               transform: 'scale(1.04)',
-              boxShadow: '0 0 16px rgba(120,245,43,0.25)',
+              boxShadow: '0 0 16px rgba(56,189,248,0.35)',
             }
           : {
               background: hov ? 'rgba(255,255,255,0.08)' : 'rgba(19,23,32,0.8)',

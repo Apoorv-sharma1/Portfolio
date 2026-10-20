@@ -72,11 +72,11 @@ const InteractiveSculpture = ({ isHovered, setIsHovered }) => {
           />
         </Torus>
 
-        {/* Outer Accent Torus Ring 2 (Architectural Lime #78F52B) */}
+        {/* Outer Accent Torus Ring 2 (Architectural Lime #38BDF8) */}
         <Torus ref={ringRef2} args={[2.7, 0.03, 32, 100]} rotation={[Math.PI / 3, 0, 0]}>
           <meshStandardMaterial
-            color="#78F52B"
-            emissive="#78F52B"
+            color="#38BDF8"
+            emissive="#38BDF8"
             emissiveIntensity={2.5}
             roughness={0.1}
             metalness={0.9}
@@ -118,7 +118,7 @@ export const HeroScene = () => {
           <ambientLight intensity={0.8} />
           <directionalLight position={[10, 10, 5]} intensity={1.5} color="#FFFFFF" />
           <pointLight position={[-8, -8, -5]} intensity={2.5} color="#8B5CF6" />
-          <pointLight position={[8, -5, 5]} intensity={3} color="#78F52B" />
+          <pointLight position={[8, -5, 5]} intensity={3} color="#38BDF8" />
 
           {/* Core Visual */}
           <InteractiveSculpture isHovered={isHovered} setIsHovered={setIsHovered} />
@@ -138,7 +138,7 @@ export const HeroScene = () => {
             size={3}
             speed={0.6}
             opacity={0.8}
-            color="#78F52B"
+            color="#38BDF8"
           />
         </Canvas>
       </Suspense>

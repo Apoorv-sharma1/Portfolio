@@ -167,22 +167,6 @@ export const skills = {
 
 export const experiences = [
   {
-    role: "Founder",
-    company: "Webnetic Studios",
-    period: "Jan 2022 - Present",
-    location: "Remote / India",
-    description: "Develop responsive, SEO-optimized web applications and scalable digital solutions. Combine front-end artistry with robust back-end APIs to establish high-impact digital presence for growing businesses.",
-    badges: ["Full Stack", "MERN", "SEO", "E-Commerce", "UI/UX"]
-  },
-  {
-    role: "Co-Founder",
-    company: "FuseOne Studios",
-    period: "Jan 2025 - Present",
-    location: "Remote",
-    description: "Architecting Agentic AI-driven platforms and SaaS focused on business workflow automation. Designed multi-agent execution pipelines reducing manual operational overhead by up to 70%.",
-    badges: ["Agentic AI", "Automation", "SaaS Architecture", "Product Strategy"]
-  },
-  {
     role: "Brand & Growth Strategist",
     company: "turtlehead.store",
     period: "Jul 2026 - Present",
@@ -216,10 +200,10 @@ export const experiences = [
   },
   {
     role: "Design Coordinator",
-    company: "Competitive Programming Club — JKLU",
+    company: "Competitive Programming Club",
     period: "Oct 2024 - Aug 2025",
     location: "Jaipur, India",
-    description: "Led visual identity, event branding, and promotional design for university coding hackathons and competitive programming contests.",
+    description: "Led visual identity, event branding, and promotional design for coding hackathons and competitive programming contests.",
     badges: ["Graphic Design", "Leadership", "Event Branding"]
   },
   {

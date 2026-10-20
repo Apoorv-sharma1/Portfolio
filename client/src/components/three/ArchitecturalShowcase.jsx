@@ -59,12 +59,12 @@ const ArchitecturalSign = ({ position, title, subtitle, destinationId, onClick }
         />
       </mesh>
 
-      {/* Vibrant Lime Green End Block (#78F52B) */}
+      {/* Vibrant Cyan End Block (#38BDF8) */}
       <mesh position={[0.85, 0, 0]} castShadow>
         <boxGeometry args={[0.45, 1.4, 0.36]} />
         <meshStandardMaterial
-          color={hovered ? '#8FF84E' : '#78F52B'}
-          emissive="#78F52B"
+          color={hovered ? '#60A5FA' : '#38BDF8'}
+          emissive="#38BDF8"
           emissiveIntensity={hovered ? 0.6 : 0.25}
           roughness={0.2}
           metalness={0.2}
@@ -155,7 +155,7 @@ export const ArchitecturalShowcase = ({ onNavigate }) => {
             shadow-bias={-0.0001}
           />
           <pointLight position={[-4, 2, 2]} intensity={1.5} color="#8B5CF6" />
-          <pointLight position={[4, -2, 2]} intensity={1.5} color="#78F52B" />
+          <pointLight position={[4, -2, 2]} intensity={1.5} color="#38BDF8" />
 
           {/* Concrete Backdrop Wall */}
           <mesh position={[0, 0, -0.6]} receiveShadow>

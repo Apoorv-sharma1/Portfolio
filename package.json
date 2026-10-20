@@ -2,6 +2,7 @@
   "name": "apoorv-developer-world",
   "version": "1.0.0",
   "description": "Ultra-Premium Interactive 3D MERN Developer Portfolio for Apoorv Sharma",
+  "type": "module",
   "scripts": {
     "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
     "client:dev": "npm --prefix client run dev",

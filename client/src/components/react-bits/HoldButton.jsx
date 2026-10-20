@@ -5,7 +5,7 @@ export const HoldButton = ({
   children,
   doneLabel = 'Sent to MongoDB',
   backgroundColor = '#131720',
-  fillColor = '#78F52B',
+  fillColor = '#38BDF8',
   textColor = '#F5F5F5',
   fillTextColor = '#000000',
   size = 'md',

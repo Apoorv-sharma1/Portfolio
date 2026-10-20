@@ -48,8 +48,8 @@ export const FloatingDiscussButton = () => {
             : 'bg-white/95 text-slate-800 border-slate-300 hover:border-blue-500/60 hover:shadow-blue-500/20 shadow-slate-300'
         }`}
       >
-        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-        <MessageSquareText size={15} className={isDark ? 'text-brand-lime' : 'text-blue-600'} />
+        <span className="w-2.5 h-2.5 rounded-full bg-sky-400 animate-pulse" />
+        <MessageSquareText size={15} className="text-sky-400" />
         <span className="font-bold">Discuss a project</span>
         <span className="text-[10px] font-mono opacity-70">(Pull & sling!)</span>
       </div>
@@ -68,7 +68,7 @@ export const FloatingDiscussButton = () => {
           onSend={handleDiscuss}
           padColor={isDark ? '#1F2430' : '#FFFFFF'}
           iconColor={isDark ? '#F5F5F5' : '#0F172A'}
-          accentColor={isDark ? '#78F52B' : '#3B82F6'}
+          accentColor="#38BDF8"
           wellColor={isDark ? '#12151D' : '#E2E8F0'}
           bandColor={isDark ? '#3E465B' : '#94A3B8'}
           size={56}

@@ -63,7 +63,7 @@ export const ContactSection = () => {
           particleCount: 90,
           spread: 70,
           origin: { y: 0.75 },
-          colors: ['#78F52B', '#8B5CF6', '#69C9FF']
+          colors: ['#38BDF8', '#4F8FF7', '#818CF8']
         });
       } catch (e) {
         // Safe fallback
@@ -288,7 +288,7 @@ export const ContactSection = () => {
                   <HoldButton
                     doneLabel="Message Sent ✓"
                     backgroundColor="#1A202C"
-                    fillColor="#78F52B"
+                    fillColor="#38BDF8"
                     textColor="#F5F5F5"
                     fillTextColor="#000000"
                     size="md"

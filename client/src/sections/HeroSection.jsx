@@ -50,7 +50,7 @@ export const HeroSection = () => {
                   : 'bg-white/95 border-blue-300/60 text-slate-700 shadow-blue-500/10'
               }`}
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+              <span className="w-2 h-2 rounded-full bg-sky-400 animate-ping" />
               <span className={isDark ? 'text-brand-lime font-semibold' : 'text-blue-600 font-semibold'}>
                 Open to Opportunities
               </span>

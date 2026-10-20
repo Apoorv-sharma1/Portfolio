@@ -107,7 +107,7 @@ export const AboutSection = () => {
                   paperColor="#F5F6F4"
                   itemColor="#131720"
                   itemTextColor="#F5F5F5"
-                  labelColor="#78F52B"
+                  labelColor="#38BDF8"
                   width={210}
                   height={145}
                   spread={190}
@@ -143,18 +143,18 @@ export const AboutSection = () => {
               </p>
             </div>
 
-            {/* Ventures Card */}
+            {/* Digital Studios Card */}
             <div className="p-6 rounded-2xl glass-panel border border-white/10 space-y-4">
               <h4 className="text-xs font-mono uppercase tracking-wider text-white flex items-center gap-2">
-                <Building2 size={16} className="text-brand-accent" />
-                Active Engineering Ventures
+                <Building2 size={16} className="text-blue-400" />
+                Digital Studios & Initiatives
               </h4>
 
               <div className="space-y-3">
                 <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5">
                   <div className="flex items-center justify-between">
                     <span className="font-bold text-sm text-white">Webnetic Studios</span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-lime/10 text-brand-lime border border-brand-lime/20">Founder</span>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-sky-400 border border-blue-500/20">Studio</span>
                   </div>
                   <p className="text-xs text-dark-gray mt-1">
                     Scalable full-stack websites, high-conversion e-commerce, and bespoke digital infrastructure.
@@ -164,7 +164,7 @@ export const AboutSection = () => {
                 <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5">
                   <div className="flex items-center justify-between">
                     <span className="font-bold text-sm text-white">FuseOne Studios</span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-accent/20 text-brand-accent border border-brand-accent/30">Co-Founder</span>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-sky-400 border border-blue-500/20">AI Lab</span>
                   </div>
                   <p className="text-xs text-dark-gray mt-1">
                     Agentic AI platforms and SaaS engineered to automate business workflows and customer ops.

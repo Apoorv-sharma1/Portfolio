@@ -23,9 +23,9 @@ export default {
           muted: '#D0D4CC',
         },
         brand: {
-          accent: '#8B5CF6',      // Primary Violet
-          cyan: '#69C9FF',        // Secondary Cyan
-          lime: '#78F52B',        // Signature Architectural Lime (CROS signage)
+          accent: '#4F8FF7',      // Primary Electric Blue (matching GradientASCII)
+          cyan: '#38BDF8',        // Secondary Bright Cyan
+          lime: '#38BDF8',        // Swapped lime for Cyan-Blue to harmonize all accents
           charcoal: '#17191D',
           white: '#F5F6F4',
           gray: '#A5ACB8',
