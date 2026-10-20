@@ -1,9 +1,18 @@
 {
   "version": 2,
-  "buildCommand": "npm run client:build",
+  "installCommand": "npm install && npm --prefix client install",
+  "buildCommand": "npm --prefix client run build",
   "outputDirectory": "client/dist",
   "framework": "vite",
   "rewrites": [
+    {
+      "source": "/api/resume/pdf",
+      "destination": "/api/resume.js?format=pdf"
+    },
+    {
+      "source": "/api/resume/docx",
+      "destination": "/api/resume.js?format=docx"
+    },
     {
       "source": "/api/(.*)",
       "destination": "/api/$1"

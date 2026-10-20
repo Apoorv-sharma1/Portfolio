@@ -4,8 +4,10 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
-    const saved = localStorage.getItem('portfolio-theme');
+    const saved = localStorage.getItem('portfolio_theme_v2');
     if (saved) return saved;
+    // Enforce light theme as requested default
+    localStorage.setItem('portfolio_theme_v2', 'light');
     return 'light';
   });
 
@@ -18,7 +20,7 @@ export const ThemeProvider = ({ children }) => {
       root.classList.remove('dark');
       root.classList.add('light');
     }
-    localStorage.setItem('portfolio-theme', theme);
+    localStorage.setItem('portfolio_theme_v2', theme);
   }, [theme]);
 
   const toggleTheme = () => {

@@ -9,6 +9,7 @@
     "client:build": "npm --prefix client run build",
     "server:start": "npm --prefix server start",
     "build": "npm run client:build",
+    "postinstall": "npm --prefix client install",
     "install:all": "npm install && npm --prefix client install && npm --prefix server install"
   },
   "keywords": [

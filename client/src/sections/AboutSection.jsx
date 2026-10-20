@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BookOpen, GraduationCap, Building2, MapPin, Sparkles, CheckCircle2, Folder } from 'lucide-react';
 import { profile } from '../data/portfolioData';
 import { FolderFloat } from '../components/react-bits/FolderFloat';
+import PaperCrumple from '../components/react-bits/PaperCrumple';
 
 export const AboutSection = () => {
   const [selectedNote, setSelectedNote] = useState(null);
@@ -10,9 +11,7 @@ export const AboutSection = () => {
     'Automate 70% manual work',
     'Resisting Peer Pressure (Book)',
     'Full-Stack MERN Architecture',
-    'Agentic AI Multi-Agent Systems',
-    'Founder @ Webnetic Studios',
-    'Co-Founder @ FuseOne Studios'
+    'Agentic AI Multi-Agent Systems'
   ];
 
   return (
@@ -191,6 +190,31 @@ export const AboutSection = () => {
                 <CheckCircle2 size={14} className="text-brand-lime shrink-0" />
                 <span>Open for Full-Time Roles & High-Impact Projects</span>
               </div>
+            </div>
+
+            {/* Interactive 3D Paper Card from React Bits */}
+            <div className="p-6 rounded-2xl glass-panel border border-white/10 space-y-3">
+              <div className="flex items-center justify-between">
+                <h4 className="text-xs font-mono uppercase tracking-wider text-white">
+                  Interactive 3D Identity Card
+                </h4>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/30">
+                  Hold to Crumple!
+                </span>
+              </div>
+              <div className="flex items-center justify-center overflow-hidden py-2">
+                <PaperCrumple
+                  src="/paper-card.jpg"
+                  alt="Apoorv Sharma Developer Card"
+                  width={240}
+                  height={310}
+                  sceneHeight={330}
+                  crumpleAmount={0.8}
+                />
+              </div>
+              <p className="text-[11px] font-mono text-center text-dark-gray">
+                Click and drag the paper card to crumple and toss in 3D physics!
+              </p>
             </div>
           </div>
         </div>

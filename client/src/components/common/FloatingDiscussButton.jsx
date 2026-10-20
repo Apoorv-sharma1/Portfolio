@@ -35,23 +35,23 @@ export const FloatingDiscussButton = () => {
 
   return (
     <div
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-3 select-none"
+      className="fixed bottom-6 right-6 z-[999] flex items-center gap-2.5 select-none"
       style={{ filter: 'drop-shadow(0 10px 25px rgba(0,0,0,0.3))' }}
       aria-label="Floating Discuss a Project launcher"
     >
       {/* Tooltip / Label */}
       <div
         onClick={handleDiscuss}
-        className={`cursor-pointer hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-full border text-xs font-semibold backdrop-blur-md transition-all duration-200 hover:scale-105 shadow-lg ${
+        className={`cursor-pointer flex items-center gap-2 px-3.5 py-2 rounded-full border text-xs font-semibold backdrop-blur-md transition-all duration-200 hover:scale-105 shadow-xl ${
           isDark
-            ? 'bg-[#18181B]/95 text-white border-white/15 hover:border-brand-lime/60 hover:shadow-brand-lime/20'
-            : 'bg-white/95 text-slate-800 border-slate-300 hover:border-blue-500/60 hover:shadow-blue-500/20 shadow-slate-200'
+            ? 'bg-[#18181B]/95 text-white border-white/20 hover:border-brand-lime/60 hover:shadow-brand-lime/20'
+            : 'bg-white/95 text-slate-800 border-slate-300 hover:border-blue-500/60 hover:shadow-blue-500/20 shadow-slate-300'
         }`}
       >
-        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-        <MessageSquareText size={14} className={isDark ? 'text-brand-lime' : 'text-blue-600'} />
-        <span>Discuss a project</span>
-        <span className="text-[10px] font-mono opacity-60">(Pull & sling!)</span>
+        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+        <MessageSquareText size={15} className={isDark ? 'text-brand-lime' : 'text-blue-600'} />
+        <span className="font-bold">Discuss a project</span>
+        <span className="text-[10px] font-mono opacity-70">(Pull & sling!)</span>
       </div>
 
       {/* Floating notification feedback when slung */}
