@@ -6,8 +6,7 @@ export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem('portfolio-theme');
     if (saved) return saved;
-    // Default to dark as requested in the creative override
-    return 'dark';
+    return 'light';
   });
 
   useEffect(() => {

@@ -8,14 +8,14 @@ export const profile = {
 Currently, I'm building Webnetic Studios (crafting high-performance digital solutions for growing brands) and co-founding FuseOne Studios (architecting agentic AI-driven automation workflows). 
 
 Beyond code, I am a published self-help author of "A Guide to Resisting Peer Pressure"—believing that great engineering begins with strong, independent decision-making.`,
-  location: "Jaipur, Rajasthan, India",
-  university: "JK Lakshmipat University (JKLU)",
-  degree: "Bachelor of Engineering (B.E.) in Computer Science",
+  location: "Jaipur, India",
+  university: "Computer Science Engineering",
+  degree: "B.E. Computer Science",
   gradYear: "2024 - 2028",
   primaryEmail: "sharma2006apoorv@gmail.com",
   workEmail: "webneticstudios@gmail.com",
-  linkedin: "https://www.linkedin.com/in/apoorvsh001",
-  github: "https://github.com/apoorvsh001",
+  linkedin: "https://www.linkedin.com/in/apoorvsh001/",
+  github: "https://github.com/Apoorv-sharma1",
   portfolioUrl: "https://apoorvsh.netlify.app",
   status: "Available for MERN Stack & AI Engineering Collaborations",
   stats: [
@@ -28,72 +28,106 @@ Beyond code, I am a published self-help author of "A Guide to Resisting Peer Pre
 
 export const projects = [
   {
-    id: "webnetic-studios",
-    title: "Webnetic Studios — Scalable Digital Ecosystem",
-    category: "Full Stack / SaaS",
-    description: "Enterprise digital agency platform and client portal designed for high-conversion web deployment, SEO automation, and seamless business system integrations.",
-    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "REST API"],
+    id: "neha-beauty-studio",
+    title: "Neha Beauty Studio",
+    category: "Landing Page / Web Design",
+    description: "Beautiful landing page for beauty studio with modern design, elegant aesthetics, and interactive service discovery.",
+    technologies: ["HTML", "CSS", "JavaScript"],
     features: [
-      "Modular dashboard architecture for client onboarding",
-      "Dynamic SEO metadata generation and analytics integration",
-      "End-to-end responsive design with custom UI tokens",
-      "Automated inquiry routing and lead qualification"
+      "Modern, elegant visual layout tailored for beauty and wellness branding",
+      "Interactive treatment catalogs and styling showcases",
+      "Fully responsive mobile and tablet browsing experience",
+      "Seamless booking and appointment inquiry flow"
     ],
-    github: "https://github.com/apoorvsh001/webnetic-platform",
-    liveDemo: "https://apoorvsh.netlify.app/",
-    highlight: "Agency Platform",
-    accentColor: "#78F52B"
+    github: "https://github.com/Apoorv-sharma1",
+    liveDemo: "https://nehabeautystudio.netlify.app/",
+    highlight: "Beauty Studio",
+    accentColor: "#EC4899"
   },
   {
-    id: "fuseone-ai",
-    title: "FuseOne Studios — Agentic AI Automation Engine",
-    category: "AI & Automation",
-    description: "Autonomous multi-agent platform designed to orchestrate business workflows, customer engagement pipelines, and automated real-time task execution.",
-    technologies: ["Node.js", "Agentic AI", "Express.js", "MongoDB", "React", "OpenAI / Claude APIs"],
+    id: "vm-stays",
+    title: "VM Stays — Your Trip Partner",
+    category: "Full Stack / Hospitality",
+    description: "Trip planning & hotel booking platform with modern UI/UX design, interactive property discovery, and streamlined reservation flow.",
+    technologies: ["React", "UI/UX Design", "Booking System", "Tailwind CSS"],
     features: [
-      "Multi-agent autonomous pipeline coordination",
-      "Automated document processing and data extraction",
-      "Reduces manual administrative effort by up to 70%",
-      "Real-time websocket execution monitoring"
+      "Multi-city hospitality exploration with dynamic date & room pickers",
+      "Frictionless booking workflow with intuitive guest UI/UX",
+      "Interactive property amenity guides and photo galleries",
+      "Mobile-first responsive accommodation cards with instant filtering"
     ],
-    github: "https://github.com/apoorvsh001/fuseone-ai-engine",
-    liveDemo: "https://apoorvsh.netlify.app/",
-    highlight: "Multi-Agent System",
+    github: "https://github.com/Apoorv-sharma1",
+    liveDemo: "https://vmstayswebnetic.netlify.app/",
+    highlight: "Hotel Booking",
+    accentColor: "#3B82F6"
+  },
+  {
+    id: "webnetic-studios",
+    title: "Webnetic Studios — Digital Infrastructure For Modern Businesses",
+    category: "Full Stack / SaaS",
+    description: "Digital agency platform and client portal designed for high-conversion web deployment, SEO automation, and modern business digital infrastructure.",
+    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+    features: [
+      "Modular dashboard architecture for client onboarding & project tracking",
+      "Dynamic SEO metadata generation and analytics integration",
+      "End-to-end responsive design with custom UI tokens and glassmorphism",
+      "Automated inquiry routing and lead qualification pipeline"
+    ],
+    github: "https://github.com/Apoorv-sharma1",
+    liveDemo: "https://webneticstudios.in/",
+    highlight: "Agency Platform",
+    accentColor: "#10B981"
+  },
+  {
+    id: "beeje-consulting",
+    title: "Beeje Consulting",
+    category: "Corporate / Executive Search",
+    description: "Specialist executive search for mid, senior, and CXO roles across India's manufacturing sectors. Based in Bengaluru.",
+    technologies: ["Corporate Web", "Executive Search", "React", "Responsive UI"],
+    features: [
+      "Tailored executive search showcasing mid, senior, and CXO leadership recruitment",
+      "Sector-focused practice directories covering India's core manufacturing industries",
+      "Corporate client briefing and high-confidentiality talent inquiries",
+      "Fast, elegant corporate brand presence with clear call-to-actions"
+    ],
+    github: "https://github.com/Apoorv-sharma1",
+    liveDemo: "https://beejeconsulting.com/",
+    highlight: "CXO Search",
+    accentColor: "#F59E0B"
+  },
+  {
+    id: "little-beehive-school",
+    title: "Little Beehive Pre Primary School",
+    category: "Educational / CMS",
+    description: "Educational website for primary school with engaging child-friendly design, custom theme, and responsive navigation.",
+    technologies: ["WordPress", "Custom Theme", "Responsive Design", "PHP"],
+    features: [
+      "Vibrant, child-friendly color palette and engaging visual components",
+      "Curriculum overview, teacher introductions, and admissions guidance",
+      "Interactive school activity gallery and event announcements",
+      "Parent inquiry and school visit scheduling forms"
+    ],
+    github: "https://github.com/Apoorv-sharma1",
+    liveDemo: "https://littlebeehive.in/",
+    highlight: "Primary Education",
     accentColor: "#8B5CF6"
   },
   {
-    id: "codec-enterprise-mern",
-    title: "Codec Tech — MERN Administrative Portal",
-    category: "Full Stack",
-    description: "Full-stack enterprise administrative management portal engineered during MERN Stack Developer tenure at Codec Technologies India.",
-    technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Mongoose", "JWT Auth"],
+    id: "me-and-daughter",
+    title: "Me & Daughter",
+    category: "Branding & E-Commerce",
+    description: "Complete branding, logo design, and website for menstrual hygiene products company focused on female wellness, dignity, and quality care.",
+    technologies: ["Branding", "Web Development", "UI/UX Design", "Responsive Layout"],
     features: [
-      "Role-based access control with secure JWT authentication",
-      "Mongoose schema validation with optimized indexing",
-      "Centralized error handling and rate-limited REST endpoints",
-      "Interactive data visualizations and audit logging"
+      "Full brand identity, custom logo system, and packaging visual aesthetics",
+      "Warm, trust-building user experience for female wellness products",
+      "E-commerce product catalog with clear benefit breakdowns and FAQs",
+      "Mobile-optimized shopping and customer education flow"
     ],
-    github: "https://github.com/apoorvsh001/mern-enterprise-system",
-    liveDemo: "https://apoorvsh.netlify.app/",
-    highlight: "MERN Stack",
-    accentColor: "#69C9FF"
-  },
-  {
-    id: "ecommerce-automation",
-    title: "High-Conversion E-Commerce Engine",
-    category: "E-Commerce",
-    description: "Performance-driven e-commerce platform with automated product catalog synchronization, checkout optimization, and payment gateway integration.",
-    technologies: ["React.js", "Node.js", "Shopify API", "WooCommerce", "Tailwind CSS"],
-    features: [
-      "Sub-second page loads with progressive image loading",
-      "Frictionless checkout UX increasing conversion rate",
-      "Automated order notification pipeline",
-      "Cross-platform inventory synchronization"
-    ],
-    github: "https://github.com/apoorvsh001/ecommerce-automation-suite",
-    liveDemo: "https://apoorvsh.netlify.app/",
-    highlight: "E-Commerce",
-    accentColor: "#F59E0B"
+    github: "https://github.com/Apoorv-sharma1",
+    liveDemo: "https://meanddaughter.in/",
+    highlight: "Branding & Web",
+    accentColor: "#F43F5E"
   }
 ];
 

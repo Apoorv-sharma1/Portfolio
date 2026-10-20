@@ -83,13 +83,13 @@ export const ContactSection = () => {
         <div className="mb-14 text-center sm:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel border border-brand-cyan/30 text-xs font-mono text-brand-cyan mb-3">
             <Sparkles size={13} />
-            <span>06 // REACH THE ARCHITECT</span>
+            <span>GET IN TOUCH</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
             Have a project in mind? Let's build something meaningful.
           </h2>
           <p className="text-sm sm:text-base text-dark-gray max-w-xl mt-2">
-            Messages are processed via Express.js and stored persistently in MongoDB with Mongoose schema validation.
+            Send a message and let's discuss your project, ideas, or collaboration opportunities.
           </p>
         </div>
 
@@ -140,7 +140,7 @@ export const ContactSection = () => {
                   <div>
                     <span className="text-xs font-mono text-neutral-400 block">LinkedIn Connection</span>
                     <span className="text-sm font-semibold text-white group-hover:text-brand-accent transition-colors">
-                      linkedin.com/in/apoorvsh001
+                      {profile.linkedin.replace('https://', '').replace('www.', '')}
                     </span>
                   </div>
                 </a>
@@ -163,14 +163,14 @@ export const ContactSection = () => {
               </div>
             </div>
 
-            {/* Architecture note */}
+            {/* Communication note */}
             <div className="p-4 rounded-xl glass-panel border border-white/5 text-xs font-mono text-neutral-400 space-y-1">
               <div className="flex items-center gap-2 text-brand-lime">
                 <CheckCircle2 size={14} />
-                <span>REST API Endpoint: POST /api/contact</span>
+                <span>Fast & Direct Response</span>
               </div>
               <p className="text-[11px] text-dark-gray pl-5">
-                Integrated with interactive <span className="text-brand-lime">Hold-to-Confirm</span> gesture: holds and charges before dispatching to MongoDB.
+                Messages are saved directly and forwarded to my primary inbox immediately.
               </p>
             </div>
           </div>
@@ -183,7 +183,7 @@ export const ContactSection = () => {
                 <div className="mb-6 p-4 rounded-xl bg-brand-lime/10 border border-brand-lime/40 text-brand-lime text-xs sm:text-sm flex items-center gap-3 animate-fadeIn">
                   <CheckCircle2 size={20} className="shrink-0" />
                   <div>
-                    <p className="font-bold">Message Delivered to MongoDB</p>
+                    <p className="font-bold">Message Sent Successfully</p>
                     <p className="text-neutral-300">{successMsg}</p>
                   </div>
                 </div>
@@ -283,10 +283,10 @@ export const ContactSection = () => {
                   </div>
                 </div>
 
-                {/* React Bits HoldButton Submission Component */}
-                <div className="pt-2">
+                {/* Submission Components */}
+                <div className="pt-2 space-y-3">
                   <HoldButton
-                    doneLabel="Transmitted to MongoDB ✓"
+                    doneLabel="Message Sent ✓"
                     backgroundColor="#1A202C"
                     fillColor="#78F52B"
                     textColor="#F5F5F5"
@@ -309,18 +309,27 @@ export const ContactSection = () => {
                     {loading ? (
                       <span className="flex items-center gap-2">
                         <Loader2 size={16} className="animate-spin" />
-                        <span>Transmitting to MongoDB...</span>
+                        <span>Sending message...</span>
                       </span>
                     ) : (
                       <span className="flex items-center gap-2 font-mono text-xs sm:text-sm">
                         <ShieldCheck size={16} className="text-brand-lime" />
-                        <span>Press & Hold to Send to MongoDB</span>
+                        <span>Press & Hold to Send Message</span>
                       </span>
                     )}
                   </HoldButton>
-                  <p className="text-[11px] font-mono text-center text-dark-gray mt-2">
-                    Hold the button for ~0.8s to authenticate and dispatch the message.
-                  </p>
+
+                  <div className="flex items-center justify-between text-[11px] font-mono text-dark-gray px-1">
+                    <span>Hold ~0.8s to send</span>
+                    <button
+                      type="button"
+                      onClick={handleHoldSubmit}
+                      disabled={loading}
+                      className="text-blue-500 hover:text-blue-400 hover:underline cursor-pointer"
+                    >
+                      Or click here to send immediately →
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>

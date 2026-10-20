@@ -17,13 +17,13 @@ export const ResumePage = () => {
             Apoorv Sharma — Official Resume
           </h1>
           <p className="text-sm text-dark-gray mt-2">
-            Served securely via dedicated Node/Express REST API endpoints.
+            Available in PDF and Microsoft Word (DOCX) formats.
           </p>
 
           {/* Action Download Buttons */}
           <div className="flex items-center justify-center gap-4 mt-6 flex-wrap">
             <a
-              href={api.getPdfDownloadUrl()}
+              href="/resume.pdf"
               download="Apoorv_Sharma_Resume.pdf"
               className="px-6 py-3 rounded-xl bg-brand-accent hover:bg-brand-accent/90 text-white font-bold text-sm flex items-center gap-2 shadow-lg glow-accent transition-all"
             >
@@ -32,7 +32,7 @@ export const ResumePage = () => {
             </a>
 
             <a
-              href={api.getDocxDownloadUrl()}
+              href="/resume.docx"
               download="Apoorv_Sharma_Resume.docx"
               className="px-6 py-3 rounded-xl glass-panel border border-brand-cyan/40 text-brand-cyan hover:bg-brand-cyan hover:text-black font-bold text-sm flex items-center gap-2 transition-all"
             >
@@ -41,7 +41,7 @@ export const ResumePage = () => {
             </a>
 
             <a
-              href={`${api.getPdfDownloadUrl()}?view=inline`}
+              href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-3 rounded-xl border border-white/10 text-neutral-300 hover:text-white hover:bg-white/5 text-sm flex items-center gap-1.5 transition-colors"
@@ -57,7 +57,7 @@ export const ResumePage = () => {
           {/* Header Summary */}
           <div className="border-b border-white/10 pb-6 text-center">
             <h2 className="text-2xl font-bold text-white tracking-wide">{profile.name}</h2>
-            <p className="text-sm text-brand-cyan font-mono mt-1">{profile.headline} • {profile.university}</p>
+            <p className="text-sm text-brand-cyan font-mono mt-1">{profile.headline} • Jaipur, India</p>
             <p className="text-xs text-dark-gray mt-2 font-mono">
               Email: {profile.primaryEmail} | Portfolio: apoorvsh.netlify.app | Location: {profile.location}
             </p>

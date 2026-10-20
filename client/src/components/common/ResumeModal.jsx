@@ -43,12 +43,12 @@ export const ResumeModal = ({ isOpen, onClose }) => {
           </div>
           <div>
             <h3 className="text-xl font-bold text-white">Download Resume</h3>
-            <p className="text-xs font-mono text-brand-lime">Official Express.js Backend Endpoints</p>
+            <p className="text-xs font-mono text-brand-lime">Curriculum Vitae • Apoorv Sharma</p>
           </div>
         </div>
 
         <p className="text-sm text-dark-gray my-4 leading-relaxed">
-          Select your preferred format. Files are dynamically streamed from the verified Express API endpoints (<code className="text-xs text-brand-cyan">/api/resume/pdf</code> and <code className="text-xs text-brand-cyan">/api/resume/docx</code>).
+          Select your preferred format to view or download my latest professional resume.
         </p>
 
         {/* Download Options */}
@@ -66,7 +66,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
             </div>
             <div className="flex items-center gap-2">
               <a
-                href={`${api.getPdfDownloadUrl()}?view=inline`}
+                href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-xs font-mono rounded-lg border border-white/10 hover:bg-white/10 text-neutral-300 transition-colors flex items-center gap-1"
@@ -75,7 +75,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
                 <ExternalLink size={14} />
               </a>
               <a
-                href={api.getPdfDownloadUrl()}
+                href="/resume.pdf"
                 download="Apoorv_Sharma_Resume.pdf"
                 className="px-3 py-2 text-xs font-semibold rounded-lg bg-brand-accent hover:bg-brand-accent/90 text-white transition-all flex items-center gap-1.5 shadow-md"
               >
@@ -96,7 +96,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
               </div>
             </div>
             <a
-              href={api.getDocxDownloadUrl()}
+              href="/resume.docx"
               download="Apoorv_Sharma_Resume.docx"
               className="px-3 py-2 text-xs font-semibold rounded-lg bg-brand-cyan/20 border border-brand-cyan/40 text-brand-cyan hover:bg-brand-cyan hover:text-black transition-all flex items-center gap-1.5"
             >
@@ -108,7 +108,7 @@ export const ResumeModal = ({ isOpen, onClose }) => {
         {/* Verification Footer */}
         <div className="flex items-center gap-2 text-xs text-neutral-400 font-mono pt-3 border-t border-white/10">
           <CheckCircle size={14} className="text-brand-lime" />
-          <span>Verified MERN Stack Rubric Mandatory Requirement</span>
+          <span>Updated & Ready for Opportunities</span>
         </div>
       </div>
     </div>

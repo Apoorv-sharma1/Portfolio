@@ -52,7 +52,7 @@ export const SkillsSection = () => {
             Technical Stack & Engineering Depth
           </h2>
           <p className="text-sm sm:text-base text-dark-gray max-w-2xl mt-2">
-            Verified technologies actively leveraged in production MERN platforms and agentic automation pipelines.
+            Technologies, frameworks, and tools I leverage to build scalable web applications and automated systems.
           </p>
         </div>
 

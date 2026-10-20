@@ -22,6 +22,9 @@
   ],
   "author": "Apoorv Sharma",
   "license": "MIT",
+  "dependencies": {
+    "mongoose": "^8.5.1"
+  },
   "devDependencies": {
     "concurrently": "^8.2.2"
   }

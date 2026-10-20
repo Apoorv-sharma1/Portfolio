@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BookOpen, GraduationCap, Building2, MapPin, Sparkles, CheckCircle2, Folder, Layers } from 'lucide-react';
+import { BookOpen, GraduationCap, Building2, MapPin, Sparkles, CheckCircle2, Folder } from 'lucide-react';
 import { profile } from '../data/portfolioData';
 import { FolderFloat } from '../components/react-bits/FolderFloat';
 
@@ -86,7 +86,7 @@ export const AboutSection = () => {
                     <span>Interactive Milestones & Mindset Vault</span>
                   </h4>
                   <p className="text-xs text-dark-gray mt-1">
-                    Hover or click the folder below to release floating physics pills. Drag and throw them in zero-gravity!
+                    Click the folder below to release floating physics pills. Drag and throw them in zero-gravity!
                   </p>
                 </div>
                 <span className="text-[11px] font-mono px-2.5 py-1 rounded bg-brand-accent/20 text-brand-accent border border-brand-accent/30 self-start sm:self-auto">
@@ -95,14 +95,14 @@ export const AboutSection = () => {
               </div>
 
               {/* Folder Float Centered Stage */}
-              <div className="py-8 flex flex-col items-center justify-center min-h-[220px]">
+              <div className="py-6 flex flex-col items-center justify-center min-h-[220px]">
                 <FolderFloat
                   items={folderNotes}
                   label="Apoorv's Vault"
                   sublabel="6 key notes"
-                  trigger="hover"
+                  trigger="click"
                   physics={true}
-                  drift={0.6}
+                  drift={0.4}
                   folderColor="#17191D"
                   frontColor="#272B31"
                   paperColor="#F5F6F4"

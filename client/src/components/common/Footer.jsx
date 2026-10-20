@@ -87,7 +87,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-dark-gray">
           <div>
-            © {new Date().getFullYear()} Apoorv Sharma • JK Lakshmipat University (JKLU). All rights reserved.
+            © {new Date().getFullYear()} Apoorv Sharma. All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <span className="text-neutral-500">MERN Stack • Three.js • React Bits</span>

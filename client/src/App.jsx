@@ -12,13 +12,24 @@ import { CertificationsPage } from './pages/CertificationsPage';
 import { ResumePage } from './pages/ResumePage';
 import { ContactPage } from './pages/ContactPage';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { FloatingDiscussButton } from './components/common/FloatingDiscussButton';
 
-// Scroll to top helper on route navigation
+// Scroll helper that supports both direct routes and hash anchors
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 80);
+        return;
+      }
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 };
 
@@ -27,7 +38,7 @@ export const App = () => {
     <ThemeProvider>
       <Router>
         <ScrollToTop />
-        <div className="min-h-screen flex flex-col bg-dark-bg text-[#F5F5F5] transition-colors duration-300">
+        <div className="min-h-screen flex flex-col bg-[#F8FAFC] dark:bg-dark-bg text-slate-800 dark:text-[#F5F5F5] transition-colors duration-300">
           <Navbar />
           <div className="flex-grow">
             <Routes>
@@ -43,6 +54,7 @@ export const App = () => {
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </div>
+          <FloatingDiscussButton />
           <Footer />
         </div>
       </Router>

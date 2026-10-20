@@ -1,184 +1,461 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ExternalLink, Github, ArrowUpRight, CheckCircle2, Sparkles, ArrowLeft, Terminal, Filter } from 'lucide-react';
+import {
+  ExternalLink, Github, ArrowLeft, CheckCircle2,
+  Sparkles, Filter, Globe, Terminal, Tag
+} from 'lucide-react';
 import { projects } from '../data/portfolioData';
-import { TiltCard } from '../components/react-bits/TiltCard';
 import GradientASCII from '../components/react-bits/GradientASCII';
+
+const CATEGORIES = ['All', 'Full Stack / SaaS', 'Hospitality', 'Corporate', 'Educational', 'Branding'];
 
 export const ProjectsPage = () => {
   const [filter, setFilter] = useState('All');
 
-  const categories = ['All', 'Full Stack / SaaS', 'AI & Automation', 'E-Commerce'];
-
-  const filteredProjects =
+  const filtered =
     filter === 'All'
       ? projects
-      : projects.filter((p) => p.category.toLowerCase().includes(filter.toLowerCase()));
+      : projects.filter((p) =>
+          p.category.toLowerCase().includes(filter.toLowerCase())
+        );
 
   return (
-    <div className="relative min-h-screen bg-dark-bg text-[#F5F5F5] pt-24 pb-20 overflow-hidden">
-      {/* Dynamic React Bits GradientASCII WebGL Background */}
-      <div className="absolute top-0 left-0 right-0 h-[650px] z-0 opacity-45 pointer-events-auto overflow-hidden">
-        <GradientASCII
-          colors={['#1e3fd8', '#8B5CF6', '#a5d8ff', '#78F52B']}
-          shape="horizon"
-          characters=" =+xX0S8#@"
-          cellSize={18}
-          density={0.8}
-          glyphOpacity={0.85}
-          gradientOpacity={0.85}
-          glow={0.3}
-          mouseInteraction={true}
-          clickEffect="wave"
+    <div style={{ minHeight: '100vh', background: '#0B0D12', color: '#F5F5F5' }}>
+
+      {/* Hero Banner 600px with GradientASCII */}
+      <div style={{ width: '100%', height: '600px', position: 'relative', overflow: 'hidden' }}>
+
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
+          <GradientASCII
+            colors={['#1e3fd8', '#f6f8ff', '#a5d8ff', '#38bdf8']}
+            shape="horizon"
+            characters=" =+xX0S8#@"
+            cellSize={18}
+            density={0.8}
+          />
+        </div>
+
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            zIndex: 1,
+            background:
+              'linear-gradient(to bottom, rgba(11,13,18,0.65) 0%, rgba(11,13,18,0.35) 50%, rgba(11,13,18,0.98) 100%)',
+            pointerEvents: 'none',
+          }}
         />
-        {/* Soft bottom fade to blend with page content */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-dark-bg/60 to-dark-bg pointer-events-none" />
+
+        <div
+          style={{
+            position: 'relative',
+            zIndex: 2,
+            maxWidth: '1280px',
+            margin: '0 auto',
+            padding: '6rem 1.5rem 2.5rem',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            boxSizing: 'border-box',
+          }}
+        >
+          <div>
+            <Link
+              to="/"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                fontSize: '0.72rem',
+                fontFamily: 'monospace',
+                color: '#A5ACB8',
+                padding: '0.45rem 0.9rem',
+                borderRadius: '0.75rem',
+                background: 'rgba(19,23,32,0.85)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                backdropFilter: 'blur(8px)',
+                textDecoration: 'none',
+              }}
+            >
+              <ArrowLeft size={13} />
+              <span>Back to Home</span>
+            </Link>
+          </div>
+
+          <div style={{ maxWidth: '720px' }}>
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                padding: '0.3rem 0.9rem',
+                borderRadius: '999px',
+                background: 'rgba(19,23,32,0.9)',
+                border: '1px solid rgba(120,245,43,0.4)',
+                fontSize: '0.7rem',
+                fontFamily: 'monospace',
+                color: '#78F52B',
+                marginBottom: '1rem',
+              }}
+            >
+              <Sparkles size={12} />
+              <span>EXHIBITION ARCHIVE // 2022 - PRESENT</span>
+            </div>
+
+            <h1
+              style={{
+                fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                fontWeight: 900,
+                color: '#ffffff',
+                lineHeight: 1.1,
+                letterSpacing: '-0.02em',
+                marginBottom: '0.75rem',
+              }}
+            >
+              Featured Systems &amp; Deployments
+            </h1>
+
+            <p
+              style={{
+                fontSize: '0.9rem',
+                color: '#A5ACB8',
+                lineHeight: 1.65,
+                maxWidth: '600px',
+                marginBottom: '1.5rem',
+              }}
+            >
+              Production-grade MERN platforms, autonomous AI automation systems, and scalable web architectures engineered for real business impact.
+            </p>
+
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>
+              <span
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.35rem',
+                  fontSize: '0.7rem',
+                  fontFamily: 'monospace',
+                  color: '#A5ACB8',
+                  marginRight: '0.25rem',
+                }}
+              >
+                <Filter size={12} style={{ color: '#69C9FF' }} />
+                Filter:
+              </span>
+              {CATEGORIES.map((cat) => (
+                <FilterButton
+                  key={cat}
+                  cat={cat}
+                  active={filter === cat}
+                  onClick={() => setFilter(cat)}
+                />
+              ))}
+            </div>
+          </div>
+
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              fontSize: '0.65rem',
+              fontFamily: 'monospace',
+              color: 'rgba(165,172,184,0.6)',
+              borderTop: '1px solid rgba(255,255,255,0.05)',
+              paddingTop: '0.75rem',
+            }}
+          >
+            <span style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+              <Terminal size={11} style={{ color: '#69C9FF' }} />
+              Interactive ASCII Horizon - move your cursor across the wave
+            </span>
+            <span style={{ color: '#78F52B' }}>{filtered.length} project{filtered.length !== 1 ? 's' : ''} shown</span>
+          </div>
+        </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Breadcrumb / Back Link */}
-        <div className="mb-6">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-xs font-mono text-dark-gray hover:text-brand-lime transition-colors px-3 py-1.5 rounded-lg glass-panel border border-white/5"
-          >
-            <ArrowLeft size={14} />
-            <span>Back to Exploration Base</span>
-          </Link>
-        </div>
-
-        {/* Page Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-panel border border-brand-lime/30 text-xs font-mono text-brand-lime mb-3">
-              <Sparkles size={13} />
-              <span>DEDICATED EXHIBITION // MERN & AGENTIC AI</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight">
-              Featured Systems & Deployments
-            </h1>
-            <p className="text-sm sm:text-base text-dark-gray max-w-2xl mt-2 leading-relaxed">
-              Standalone project showcase powered by production-grade MERN architectures, agentic AI execution pipelines, and verified repository links.
-            </p>
+      {/* Projects Grid */}
+      <div
+        style={{
+          maxWidth: '1280px',
+          margin: '0 auto',
+          padding: '4rem 1.5rem 5rem',
+        }}
+      >
+        {filtered.length === 0 ? (
+          <div style={{ textAlign: 'center', color: '#A5ACB8', padding: '4rem 0', fontFamily: 'monospace' }}>
+            No projects match this filter.
           </div>
-
-          {/* Filter Controls */}
-          <div className="flex items-center gap-2 flex-wrap glass-panel p-1.5 rounded-full border border-white/10">
-            <span className="text-xs font-mono text-dark-gray pl-3 pr-1 hidden sm:inline-flex items-center gap-1">
-              <Filter size={12} /> Filter:
-            </span>
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-mono transition-all border ${
-                  filter === cat
-                    ? 'bg-brand-lime text-black font-bold border-brand-lime shadow-sm'
-                    : 'text-dark-gray hover:text-white border-transparent'
-                }`}
-              >
-                {cat}
-              </button>
+        ) : (
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 520px), 1fr))',
+              gap: '2rem',
+            }}
+          >
+            {filtered.map((project) => (
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+const FilterButton = ({ cat, active, onClick }) => {
+  const [hov, setHov] = useState(false);
+  return (
+    <button
+      onClick={onClick}
+      onMouseEnter={() => setHov(true)}
+      onMouseLeave={() => setHov(false)}
+      style={{
+        padding: '0.4rem 1rem',
+        borderRadius: '0.6rem',
+        fontSize: '0.7rem',
+        fontFamily: 'monospace',
+        cursor: 'pointer',
+        border: '1px solid',
+        transition: 'all 0.18s ease',
+        outline: 'none',
+        ...(active
+          ? {
+              background: '#78F52B',
+              color: '#000',
+              borderColor: '#78F52B',
+              fontWeight: 800,
+              transform: 'scale(1.04)',
+              boxShadow: '0 0 16px rgba(120,245,43,0.25)',
+            }
+          : {
+              background: hov ? 'rgba(255,255,255,0.08)' : 'rgba(19,23,32,0.8)',
+              color: hov ? '#fff' : '#A5ACB8',
+              borderColor: hov ? 'rgba(255,255,255,0.25)' : 'rgba(255,255,255,0.12)',
+              backdropFilter: 'blur(6px)',
+            }),
+      }}
+    >
+      {cat}
+    </button>
+  );
+};
+
+const ProjectCard = ({ project }) => {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        position: 'relative',
+        borderRadius: '1.25rem',
+        background: '#131720',
+        border: `1px solid ${hovered ? 'rgba(255,255,255,0.22)' : 'rgba(255,255,255,0.08)'}`,
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        transition: 'border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease',
+        transform: hovered ? 'translateY(-6px)' : 'translateY(0)',
+        boxShadow: hovered
+          ? `0 24px 52px rgba(0,0,0,0.5), 0 0 0 1px ${project.accentColor}25`
+          : '0 4px 20px rgba(0,0,0,0.3)',
+        willChange: 'transform',
+      }}
+    >
+      {/* Accent top strip */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '3px',
+          background: project.accentColor,
+          opacity: hovered ? 1 : 0.65,
+          transition: 'opacity 0.25s',
+        }}
+      />
+
+      <div style={{ padding: '2rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+
+        {/* Header: badge + category */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
+          <span
+            style={{
+              fontSize: '0.65rem',
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              padding: '0.25rem 0.65rem',
+              borderRadius: '0.4rem',
+              border: `1px solid ${project.accentColor}55`,
+              background: `${project.accentColor}18`,
+              color: project.accentColor,
+              letterSpacing: '0.04em',
+            }}
+          >
+            {project.highlight}
+          </span>
+          <span
+            style={{
+              fontSize: '0.65rem',
+              fontFamily: 'monospace',
+              color: '#6B7280',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.3rem',
+            }}
+          >
+            <Tag size={10} />
+            {project.category}
+          </span>
         </div>
 
-        {/* ASCII Background Interactive Hint */}
-        <div className="mb-8 p-3.5 rounded-xl glass-panel border border-white/5 flex items-center justify-between text-xs font-mono text-dark-gray">
-          <div className="flex items-center gap-2">
-            <Terminal size={14} className="text-brand-cyan" />
-            <span>Interactive Gradient ASCII Field: Move cursor or click anywhere on the top horizon to scramble/wave characters</span>
-          </div>
-          <span className="text-brand-lime hidden sm:inline-block">React Bits Component Active</span>
-        </div>
+        {/* Title */}
+        <h2
+          style={{
+            fontSize: '1.2rem',
+            fontWeight: 800,
+            color: hovered ? project.accentColor : '#ffffff',
+            lineHeight: 1.25,
+            marginBottom: '0.65rem',
+            transition: 'color 0.25s ease',
+          }}
+        >
+          {project.title}
+        </h2>
 
-        {/* Projects Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {filteredProjects.map((project) => (
-            <TiltCard
-              key={project.id}
-              maxTilt={7}
-              accentColor={project.accentColor}
-              className="p-6 sm:p-8 flex flex-col justify-between border-white/10 hover:border-white/20 bg-dark-surface/85 backdrop-blur-xl group"
+        {/* Description */}
+        <p
+          style={{
+            fontSize: '0.83rem',
+            color: '#9CA3AF',
+            lineHeight: 1.65,
+            marginBottom: '1.25rem',
+          }}
+        >
+          {project.description}
+        </p>
+
+        {/* Feature bullets */}
+        <div
+          style={{
+            background: 'rgba(11,13,18,0.55)',
+            border: '1px solid rgba(255,255,255,0.06)',
+            borderRadius: '0.75rem',
+            padding: '0.9rem 1rem',
+            marginBottom: '1.25rem',
+          }}
+        >
+          <p
+            style={{
+              fontSize: '0.6rem',
+              fontFamily: 'monospace',
+              color: '#6B7280',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              marginBottom: '0.6rem',
+            }}
+          >
+            Core Capabilities
+          </p>
+          {project.features.map((feat, i) => (
+            <div
+              key={i}
+              style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '0.5rem',
+                marginBottom: i < project.features.length - 1 ? '0.45rem' : 0,
+              }}
             >
-              <div>
-                {/* Top Badge & Category */}
-                <div className="flex items-center justify-between mb-4">
-                  <span
-                    className="text-xs font-mono px-2.5 py-1 rounded-md border font-semibold"
-                    style={{
-                      borderColor: `${project.accentColor}40`,
-                      backgroundColor: `${project.accentColor}15`,
-                      color: project.accentColor
-                    }}
-                  >
-                    {project.highlight}
-                  </span>
-                  <span className="text-xs font-mono text-dark-gray">{project.category}</span>
-                </div>
-
-                {/* Project Title */}
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-brand-lime transition-colors">
-                  {project.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-sm text-dark-gray leading-relaxed mb-6">
-                  {project.description}
-                </p>
-
-                {/* Feature Bullet Points */}
-                <div className="space-y-2 mb-6">
-                  {project.features.map((feat, idx) => (
-                    <div key={idx} className="flex items-start gap-2 text-xs text-neutral-300">
-                      <CheckCircle2
-                        size={14}
-                        className="shrink-0 mt-0.5"
-                        style={{ color: project.accentColor }}
-                      />
-                      <span>{feat}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Technology Badges */}
-                <div className="flex flex-wrap gap-1.5 mb-8">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2.5 py-1 text-[11px] font-mono rounded-md bg-white/5 border border-white/5 text-neutral-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between mt-auto">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-mono text-dark-gray hover:text-white transition-colors group/link"
-                >
-                  <Github size={15} />
-                  <span>Source Code</span>
-                  <ArrowUpRight size={12} className="opacity-60 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                </a>
-
-                <a
-                  href={project.liveDemo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-lg bg-white/10 hover:bg-brand-lime hover:text-black text-white transition-all shadow-sm"
-                >
-                  <span>Live Preview</span>
-                  <ExternalLink size={13} />
-                </a>
-              </div>
-            </TiltCard>
+              <CheckCircle2
+                size={13}
+                style={{ color: project.accentColor, flexShrink: 0, marginTop: '2px' }}
+              />
+              <span style={{ fontSize: '0.78rem', color: '#D1D5DB', lineHeight: 1.4 }}>{feat}</span>
+            </div>
           ))}
+        </div>
+
+        {/* Tech badges */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem', marginBottom: '1.5rem' }}>
+          {project.technologies.map((tech) => (
+            <span
+              key={tech}
+              style={{
+                fontSize: '0.65rem',
+                fontFamily: 'monospace',
+                padding: '0.25rem 0.6rem',
+                borderRadius: '0.4rem',
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.09)',
+                color: '#9CA3AF',
+              }}
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+
+        <div style={{ flex: 1 }} />
+
+        {/* Action row */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            borderTop: '1px solid rgba(255,255,255,0.07)',
+            paddingTop: '1rem',
+            marginTop: 'auto',
+          }}
+        >
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              fontSize: '0.72rem',
+              fontFamily: 'monospace',
+              color: '#9CA3AF',
+              textDecoration: 'none',
+            }}
+          >
+            <Github size={14} />
+            <span>Source Code</span>
+          </a>
+
+          <a
+            href={project.liveDemo}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.4rem',
+              fontSize: '0.72rem',
+              fontWeight: 700,
+              fontFamily: 'monospace',
+              padding: '0.45rem 1rem',
+              borderRadius: '0.6rem',
+              background: hovered ? project.accentColor : 'rgba(255,255,255,0.08)',
+              color: hovered ? '#000' : '#fff',
+              textDecoration: 'none',
+              transition: 'background 0.25s ease, color 0.25s ease',
+            }}
+          >
+            <Globe size={13} />
+            <span>Live Demo</span>
+            <ExternalLink size={11} />
+          </a>
         </div>
       </div>
     </div>
