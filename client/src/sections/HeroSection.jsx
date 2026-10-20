@@ -46,12 +46,15 @@ export const HeroSection = () => {
             <div
               className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono mb-4 backdrop-blur-md border shadow-sm transition-all ${
                 isDark
-                  ? 'bg-black/60 border-brand-lime/40 text-neutral-200'
-                  : 'bg-white/95 border-blue-300/60 text-slate-700 shadow-blue-500/10'
+                  ? 'bg-black/60 border-emerald-500/30 text-neutral-200'
+                  : 'bg-white/95 border-emerald-300/60 text-slate-700 shadow-emerald-500/10'
               }`}
             >
-              <span className="w-2 h-2 rounded-full bg-sky-400 animate-ping" />
-              <span className={isDark ? 'text-brand-lime font-semibold' : 'text-blue-600 font-semibold'}>
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+              </span>
+              <span className={isDark ? 'text-emerald-400 font-semibold' : 'text-emerald-600 font-semibold'}>
                 Open to Opportunities
               </span>
               <span className="opacity-40">•</span>
@@ -146,27 +149,34 @@ export const HeroSection = () => {
               : 'bg-white/95 border-slate-200/90 shadow-slate-200/60'
           }`}
         >
-          {profile.stats.map((stat, idx) => (
-            <div
-              key={idx}
-              className="p-3 text-center sm:text-left border-r last:border-r-0 border-slate-200/60 dark:border-white/5"
-            >
+          {profile.stats.map((stat, idx) => {
+            const palette = [
+              { color: isDark ? 'text-sky-400' : 'text-sky-600', glow: 'from-sky-500/10' },
+              { color: isDark ? 'text-amber-400' : 'text-amber-600', glow: 'from-amber-500/10' },
+              { color: isDark ? 'text-blue-400' : 'text-blue-600', glow: 'from-blue-500/10' },
+              { color: isDark ? 'text-emerald-400' : 'text-emerald-600', glow: 'from-emerald-500/10' }
+            ][idx % 4];
+
+            return (
               <div
-                className={`text-2xl sm:text-3xl font-extrabold font-mono flex items-center justify-center sm:justify-start ${
-                  isDark ? 'text-brand-lime' : 'text-blue-600'
-                }`}
+                key={idx}
+                className="p-3 text-center sm:text-left border-r last:border-r-0 border-slate-200/60 dark:border-white/5 transition-all group"
               >
-                {stat.value}
+                <div
+                  className={`text-2xl sm:text-3xl font-extrabold font-mono flex items-center justify-center sm:justify-start ${palette.color} transition-transform group-hover:scale-105`}
+                >
+                  {stat.value}
+                </div>
+                <div
+                  className={`text-xs mt-1 font-medium ${
+                    isDark ? 'text-dark-gray' : 'text-slate-600'
+                  }`}
+                >
+                  {stat.label}
+                </div>
               </div>
-              <div
-                className={`text-xs mt-1 font-medium ${
-                  isDark ? 'text-dark-gray' : 'text-slate-600'
-                }`}
-              >
-                {stat.label}
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 

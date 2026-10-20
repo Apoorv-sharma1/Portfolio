@@ -39,7 +39,7 @@ export const CertificationsSection = () => {
                 key={index}
                 className={`p-6 sm:p-7 rounded-2xl glass-panel border transition-all flex flex-col justify-between ${
                   isBook
-                    ? 'border-brand-lime/40 bg-gradient-to-b from-brand-lime/5 to-transparent'
+                    ? 'border-amber-500/40 bg-gradient-to-b from-amber-500/10 to-transparent shadow-lg shadow-amber-500/5'
                     : 'border-white/10 hover:border-brand-accent/40'
                 }`}
               >
@@ -48,8 +48,10 @@ export const CertificationsSection = () => {
                     <div
                       className={`p-3 rounded-xl border ${
                         isBook
-                          ? 'bg-brand-lime/20 border-brand-lime/40 text-brand-lime'
-                          : 'bg-white/5 border-white/10 text-brand-cyan'
+                          ? 'bg-amber-500/20 border-amber-500/40 text-amber-400'
+                          : cert.icon === 'Server'
+                          ? 'bg-rose-500/15 border-rose-500/30 text-rose-400'
+                          : 'bg-sky-500/15 border-sky-500/30 text-sky-400'
                       }`}
                     >
                       <Icon size={22} />
@@ -62,7 +64,7 @@ export const CertificationsSection = () => {
                   <h3 className="text-lg font-bold text-white mb-1 leading-snug">
                     {cert.title}
                   </h3>
-                  <p className="text-xs font-mono text-brand-lime mb-3">
+                  <p className={`text-xs font-mono mb-3 ${isBook ? 'text-amber-400' : 'text-sky-400'}`}>
                     Issuer: {cert.issuer}
                   </p>
 
@@ -72,12 +74,14 @@ export const CertificationsSection = () => {
                 </div>
 
                 <div className="pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-dark-gray">
-                  <span className="flex items-center gap-1.5 text-neutral-400">
-                    <Award size={13} className="text-brand-lime" />
+                  <span className="flex items-center gap-1.5 text-neutral-300">
+                    <Award size={13} className="text-emerald-400" />
                     Verified Credential
                   </span>
                   {isBook && (
-                    <span className="text-brand-lime font-semibold">Published Work</span>
+                    <span className="text-amber-400 font-semibold px-2 py-0.5 rounded bg-amber-400/10 border border-amber-400/20">
+                      Published Work
+                    </span>
                   )}
                 </div>
               </div>

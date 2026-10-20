@@ -29,9 +29,9 @@ export const SkillsSection = () => {
   const getProficiencyColor = (level) => {
     switch (level) {
       case 'Comfortable':
-        return 'bg-brand-lime/10 text-brand-lime border-brand-lime/30';
+        return 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30';
       case 'Working Knowledge':
-        return 'bg-brand-cyan/10 text-brand-cyan border-brand-cyan/30';
+        return 'bg-sky-500/10 text-sky-400 border-sky-500/30';
       case 'Learning':
         return 'bg-amber-500/10 text-amber-400 border-amber-500/30';
       default:

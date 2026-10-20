@@ -25,7 +25,7 @@ export const Footer = () => {
               Full Stack Web Developer & AI Builder. Engineering high-performance MERN applications, multi-agent AI automation workflows, and modern web platforms.
             </p>
             <div className="flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-neutral-400">
-              <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span>{profile.status}</span>
             </div>
           </div>

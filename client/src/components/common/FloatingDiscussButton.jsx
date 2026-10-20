@@ -48,8 +48,8 @@ export const FloatingDiscussButton = () => {
             : 'bg-white/95 text-slate-800 border-slate-300 hover:border-blue-500/60 hover:shadow-blue-500/20 shadow-slate-300'
         }`}
       >
-        <span className="w-2.5 h-2.5 rounded-full bg-sky-400 animate-pulse" />
-        <MessageSquareText size={15} className="text-sky-400" />
+        <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+        <MessageSquareText size={15} className="text-emerald-400" />
         <span className="font-bold">Discuss a project</span>
         <span className="text-[10px] font-mono opacity-70">(Pull & sling!)</span>
       </div>

@@ -54,19 +54,19 @@ export const AboutSection = () => {
             </div>
 
             {/* Author Mindset Feature Card */}
-            <div className="p-6 sm:p-8 rounded-2xl glass-panel border border-brand-accent/30 bg-gradient-to-br from-brand-accent/10 to-transparent">
+            <div className="p-6 sm:p-8 rounded-2xl glass-panel border border-amber-500/30 bg-gradient-to-br from-amber-500/10 via-transparent to-transparent">
               <div className="flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-brand-accent/20 border border-brand-accent/40 text-brand-accent shrink-0">
+                <div className="p-3 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-400 shrink-0">
                   <BookOpen size={24} />
                 </div>
                 <div>
                   <h4 className="text-lg font-bold text-white mb-1">
                     Published Self-Help Author
                   </h4>
-                  <p className="text-xs font-mono text-brand-cyan mb-3">
+                  <p className="text-xs font-mono text-amber-400/90 mb-3">
                     "A Guide to Resisting Peer Pressure" (Published Jan 2023)
                   </p>
-                  <blockquote className="text-xs sm:text-sm text-neutral-300 italic border-l-2 border-brand-lime pl-3 mb-3">
+                  <blockquote className="text-xs sm:text-sm text-neutral-300 italic border-l-2 border-amber-400 pl-3 mb-3">
                     "Building strong software systems isn’t just about code—it is fundamentally about independent thinking, clarity of purpose, and resilience under pressure."
                   </blockquote>
                   <p className="text-xs sm:text-sm text-dark-gray leading-relaxed">
